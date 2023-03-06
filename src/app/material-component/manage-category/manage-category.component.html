@@ -1,0 +1,53 @@
+<mat-card>
+  <b>Manege Category</b>
+  <button mat-flat-button color="primary" class="float-right" (click)="handleAction()">Add Category</button>
+</mat-card>
+<hr>
+<mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input>
+  </mat-form-field>
+</mat-card>
+<hr>
+<mat-card>
+
+
+  <table class=" table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" sortable="name" >Name</th>
+        <th scope="col" sortable="area" >Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of dataSource">
+        <td scope="row">{{category.name}}</td>
+        <td scope="row"> <button mat-icon-button color="primary" matTooltip="edit" (click)=" handleEditAction(category.id)">
+          <mat-icon>edit</mat-icon>
+
+        </button>
+
+        </td>
+
+
+      </tr>
+    </tbody>
+  </table>
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
